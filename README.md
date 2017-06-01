@@ -1,6 +1,7 @@
 # vue-webapp-tree
 
-> A Vue.js template for web app
+> A Vue.js template for web app.
+主要是为了偷懒，每次懒得重新配了
 
 ## Build Setup
 
