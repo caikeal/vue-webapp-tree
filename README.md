@@ -4,7 +4,7 @@
 > 😁主要是为了偷懒，每次懒得重新配了
 
 ## Use Libs
-+ [Mint-ui]('https://github.com/ElemeFE/mint-ui')，A vue-component for mobile by Eleme
++ [mint-ui](https://github.com/ElemeFE/mint-ui)，A vue-component for mobile by Eleme
 
 ## Build Setup
 
