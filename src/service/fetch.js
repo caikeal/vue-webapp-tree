@@ -36,15 +36,15 @@ axios.interceptors.response.use(
 	response => response,
 	error => {
 		if (env.debug) {
-			console.info(`返回值错误信息！(${error.data.code})`);
+			console.info(`返回值错误信息！(${error.response.data.code})`);
 			console.log(error);// for debug
 		}
 		/**
 		 * 应对不同的错误code码处理，一些公共的业务逻辑
 		 */
-		if (error.status === 500) {
+		if (error.response.status === 500) {
 			MessageBox.alert('系统出错了！', '提示');
-		} else if (error.status === 401 && error.data.code !== '401001') {
+		} else if (error.response.status === 401 && error.response.data.code !== '401001') {
 			MessageBox.alert('请登录！', '提示').then(() => {
 				// 返回登录页面
 				// 登出
@@ -59,10 +59,10 @@ axios.interceptors.response.use(
 					}
 				});
 			});
-		} else if (error.status === 0) {
+		} else if (error.response.status === 0) {
 			MessageBox.alert('网络错误！', '提示');
 		} else {
-			MessageBox.alert(error.data.message, '提示');
+			MessageBox.alert(error.response.data.message, '提示');
 		}
 		return Promise.reject(error);
 	}
